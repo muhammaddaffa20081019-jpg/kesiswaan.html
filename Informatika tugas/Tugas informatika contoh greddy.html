@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Greedy: Coin Change</title>
+</head>
+<body>
+    <h2>Algoritma Greedy: Coin Change</h2>
+    
+    <label>Masukkan jumlah uang:</label>
+    <input type="number" id="inputUang" value="2750">
+    <button onclick="greedyCoinChange()">Hitung</button>
+    
+    <p id="output"></p>
+
+    <script>
+        // Fungsi greedy untuk coin change
+        function greedyCoinChange() {
+            let uang = parseInt(document.getElementById('inputUang').value); // gunakan "uang"
+            let denominations = [1000, 500, 200, 100, 50, 20, 10, 5, 1];
+            let result = [];
+            
+            for (let coin of denominations) {
+                while (uang >= coin) {
+                    uang -= coin;
+                    result.push(coin);
+                }
+            }
+            
+            document.getElementById('output').innerText =
+                "Kembalian: " + result.join(', ');
+        }
+    </script>
+</body>
+</html>

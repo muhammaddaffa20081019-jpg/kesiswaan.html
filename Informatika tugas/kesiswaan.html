@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesiswaan SMAN 103 Jakarta</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background-image: url('sega2.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    header h1 { font-size: 2.5em; margin: 0; }
+    header p { font-size: 1.2em; }
+
+    nav {
+      background-color: #03aefd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 20px;
+      min-height: 70vh;
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .activities-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      background-color: #eef4ff;
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    .card button {
+      padding: 8px 12px;
+      margin-top: 8px;
+      border: none;
+      background-color: #03aefd;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #0284c7;
+    }
+
+    footer {
+      background-color: #03aefd;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .responsive-table { overflow-x: auto; }
+    .responsive-table table { width: 100%; border-collapse: collapse; }
+    .responsive-table td, .responsive-table th { padding: 10px; border-bottom: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Selamat Datang di SMAN 103 Jakarta</h1>
+    <p>Informasi dan kegiatan siswa sekolah kami</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('sejarah')">Tentang</a></li>
+      <li><a href="#" onclick="showSection('activities')">Ekstrakurikuler</a></li>
+      <li><a href="#" onclick="showSection('contact')">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="active">
+      <h2 style="text-align:center; margin-bottom:20px;">Informasi Sekolah</h2>
+      <p style="text-align:center; max-width:800px; margin:0 auto 20px auto;">
+        SMAN 103 Jakarta dikenal sebagai sekolah unggulan di Jakarta Timur. Disini siswa tidak hanya belajar akademik tetapi juga mengembangkan bakat dan karakter melalui berbagai kegiatan.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:900px; margin:0 auto 40px auto;">
+        <div style="width:250px; border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+          <img src="hariguru.jpg" alt="Hari Guru" style="width:100%; height:120px; object-fit:cover;">
+          <div style="padding:10px;">
+            <h4 style="margin:5px 0; font-size:1.1em;">🏫 Peringatan Hari Guru Nasional</h4>
+            <p style="font-size:0.9em; color:#333;">Upacara dan pertunjukan seni untuk menghargai jasa guru setiap tanggal 25 November.</p>
+          </div>
+        </div>
+
+        <div style="width:250px; border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+          <img src="wisuda.jpg" alt="Wisuda" style="width:100%; height:120px; object-fit:cover;">
+          <div style="padding:10px;">
+            <h4 style="margin:5px 0; font-size:1.1em;">🎓 Wisuda Siswa Kelas 12</h4>
+            <p style="font-size:0.9em; color:#333;">Para siswa kelas 12 resmi menyelesaikan studi mereka dengan upacara wisuda penuh kebanggaan.</p>
+          </div>
+        </div>
+
+        <div style="width:250px; border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+          <img src="futsal.jpg" alt="Futsal" style="width:100%; height:120px; object-fit:cover;">
+          <div style="padding:10px;">
+            <h4 style="margin:5px 0; font-size:1.1em;">⚽ Turnamen Futsal Antar Kelas</h4>
+            <p style="font-size:0.9em; color:#333;">Kegiatan olahraga yang menumbuhkan semangat sportivitas dan kerja sama antar siswa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:800px; margin:0 auto 40px auto;">
+        <h3 style="text-align:center;">Jumlah Satuan Pendidikan </h3>
+        <div style="display:flex; justify-content:space-around; margin-top:20px; align-items:flex-end; height:200px; border-left:2px solid #000; border-bottom:2px solid #000; padding-left:10px;">
+          <div style="width:70px; background:#03aefd; text-align:center; height:150px;" title="Laki Laki: 297 siswa"><span style="color:white;">Laki Laki</span><p>297 siswa</p></div>
+          <div style="width:90px; background:#00c853; text-align:center; height:120px;" title="Perempuan: 420 siswa"><span style="color:white;">Perempuan</span><p>420 siswa</p></div>
+          <div style="width:60px; background:#ffc107; text-align:center; height:80px;" title="Guru: 37  siswa"><span style="color:white;">Guru</span><p>37 Guru</p></div>
+        </div>
+        <p style="text-align:center; margin-top:10px;">Jumlah satuan pendidikan SMAN 103 Jakarta</p>
+      </div>
+    </section>
+
+ <!-- TENTANG/SEJARAH -->
+<section id="sejarah">
+  <h2 style="text-align:center; margin-top:40px;">Sejarah dan Informasi SMAN 103 Jakarta</h2>
+  
+  <div style="max-width:900px; margin:20px auto; background:#fff; border-radius:12px; padding:20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); line-height:1.8;">
+    <p><strong>SMAN 103 Jakarta</strong> didirikan pada tanggal 6 Oktober 1989 dengan luas tanah 4988 m2 dan luas bangunan 1612 m2. Awalnya bernama SMA Negeri Klender, dan secara resmi menjadi SMA Negeri 103 Jakarta oleh Gubernur DKI Jakarta Bapak Wiyogo Atmodarminto pada 11 September 1990 dengan 6 rombongan belajar.</p>
+    <p><strong>Kepala sekolah yang pernah memimpin:</strong></p>
+    <ul>
+      <li>Drs. P. Parman As. P. (1990 – 1994)</li>
+      <li>Drs. Tioman Manik (1994 – 1998)</li>
+      <li>Drs. Al Heru Sukirno (1998 – 2003)</li>
+      <li>Drs. H. Sunarno, MM (2003 – 2005)</li>
+      <li>Drs. Muh. Agus Salisin (2005 – 2007)</li>
+      <li>Drs. Martumbur Hasugian, MM (2008 – 2010)</li>
+      <li>Drs. Utar Muchtar, MM (2010 – 2012)</li>
+      <li>Drs. Warnoto, M.Pd (2012 - 2014)</li>
+      <li>Dra. Hj. Umi Harini, MM (2014 - 2016)</li>
+      <li>Niyata Sirat, S.Pd (2016 - 2019)</li>
+      <li>Drs. Kristian M. Tambunan, S. Kom (2019 - sekarang)</li>
+    </ul>
+    <p>Pembangunan fisik SMA Negeri 103 Jakarta mulai dilakukan pada masa Drs. Al Heru Sukirno, ditandai dengan sistem belajar satu shief dengan rombongan belajar 21 kelas. Kemajuan demi kemajuan terus diraih oleh siswa–siswi SMAN 103 Jakarta dalam berbagai prestasi baik akademik maupun non akademik. Sedangkan di bidang pembangunan sarana dan prasarana sejak masa Drs. Muh. Agus Salisin terus ditingkatkan terutama di bidang Teknologi Informasi dan Pengembangan Sumber daya Manusia.</p>
+    <p>Awal tahun pelajaran 2007 SMA Negeri 103 Jakarta di bawah kepemimpinan Bapak Drs. Martumbur Hasugian, MM dilakukan peningkatan keterampilan berbahasa Inggris siswa dan guru dengan kerjasama salah satu lembaga bahasa Inggris Higher Learning (HL) serta penghijauan pada area sekolah. Penghijauan sekolah dilakukan dengan pembuatan taman belajar serta penghijauan lingkungan sekolah. Pada tahun pelajaran 2008, dimulainya Rintisan Sekolah Kategori Mandiri (RSKM) untuk SMA Negeri 103 Jakarta dengan dilaksanakannya moving kelas.</p> 
+  </div>
+
+  <!-- 3 KOTAK TAMBAHAN HANYA DI SEJARAH -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:20px auto; gap:20px;">
+    <div style="flex:1 1 250px; background:#f9f9f9; border:1px solid #ddd; border-radius:12px; padding:15px; text-align:left;">
+      <h3>Visi</h3>
+      <p>Terwujudnya Peserta Didik Yang Berprestasi Dan Berkebhinekaan Global Dilandasi Imtaq</p>
+      <h3>Misi</h3>
+      <ul>
+        <li>Meningkatkan keimanan dan ketakwaan peserta didik melalui perilaku religius dalam kehidupan sehari-hari.</li>
+        <li>Menyelenggarakan pembelajaran untuk mengembangkan kemampuan berfikir kritis dan kreatif.</li>
+        <li>Mengembangkan diri peserta didik sesuai minat dan bakat.</li>
+        <li>Mewujudkan lingkungan sekolah aman, nyaman, menyenangkan.</li>
+        <li>Melestarikan kearifan lokal sebagai bentuk cinta budaya bangsa.</li>
+        <li>Meningkatkan keselarasan dalam berkebhinekaan global.</li>
+      </ul>
+    </div>
+
+    <div style="flex:1 1 250px; background:#f9f9f9; border:1px solid #ddd; border-radius:12px; padding:15px; text-align:left;">
+      <h3>Kewajiban Peserta Didik</h3>
+      <ul>
+        <li>Mematuhi semua Tata Tertib dan Janji Siswa SMAN 103 Jakarta</li>
+        <li>Menjalankan ajaran agama sesuai dengan agama yang dianutnya</li>
+        <li> Mengikuti Upacara Bendera pada hari Senin atau hari besar Nasional</li>
+        <li>Menjaga dan melaksanakan 9K (Keamanan,kebersihan, kerapihan ,keindahan,kekeluargaan, keterbukaan, kerindangan, keteladanan dan kesehatan) di SMA Negeri 103 Jakarta</li>
+        <li>Mengikuti Kegiatan Belajar di dalam kelas dengan baik dan melaksanakan tugas yang berkaitan dengan kegiatan belajar</li>
+        <li>Wajib menjadi anggota OSIS dan ikut aktif memajukan kegiatan OSIS SMAN 103</li>
+        <li>Mengikuti dengan aktif ekstrakurikuler wajib dan salah satu ekstrakurikuler pilihannya bagi peserta didik kelas X dan kelas XI</li>
+        <li>Mengisi dan menyerahkan isian tentang biodata dengan benar, dan kesanggupan untuk mematuhi peraturan dan Tata Tertib SMAN 103 Jakarta</li>
+      </div>
+
+    <div style="flex:1 1 250px; background:#f9f9f9; border:1px solid #ddd; border-radius:12px; padding:15px; text-align:left;">
+      <h3>Hak Peserta Didik</h3>
+      <ul>
+        <li>Mendapatkan pendidikan agama dan mengamalkannya sesuai dengan agama masing-masing</li>
+        <li>Mendapatkan pendidikan dan pengajaran</li>
+        <li>Mendapatkan pelayanan pembinaan sesuai dengan bakat dan kemampuan peserta didik</li>
+        <li>Mendapatkan bantuan fasilitas belajar, beapeserta didik dan bantuan lain yang dapat meringankan beban material bagi peserta didikyang memenuhi kriteria tertentu</li>
+        <li>Mendapatkan Laporan Hasil Belajar Peserta didik</li>
+        <li>Pindah sekolah sesuai dengan ketentuan yang berlaku</li>
+        <li>Mendapatkan penghargaan dari sekolah atas prestasi yang diraih sesuai dengan kemampuan sekolah</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <!-- EKSTRAKURIKULER -->
+    <section id="activities">
+      <h2>Ekstrakurikuler</h2>
+      <p>Klik salah satu untuk melihat ketua dan nomor pendaftaran:</p>
+      <div class="activities-grid" id="activitiesGrid"></div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="contact">
+      <h2>Kontak</h2>
+      <div style="max-width:900px; margin:20px auto; background:#fff; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:12px; padding:20px; line-height:1.8;">
+        <h3 style="text-align:center; margin-bottom:20px;">Hubungi Kami</h3>
+        <table style="width:100%; border-collapse: collapse; font-size:1em; margin-bottom:20px;">
+          <tr>
+            <td style="padding:10px; font-weight:bold; border-bottom:1px solid #ddd; width:20%;">Alamat:</td>
+            <td style="padding:10px; border-bottom:1px solid #ddd;">JL. MAWAR MERAH VI PERUMNAS KLENDER, Malaka Jaya, Kec. Duren Sawit, Kota Adm. Jakarta Timur Prov. D.K.I. Jakarta</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; font-weight:bold; border-bottom:1px solid #ddd;">Telepon:</td>
+            <td style="padding:10px; border-bottom:1px solid #ddd;"><a href="tel:0218622372">0218622372</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px; font-weight:bold;">Email:</td>
+            <td style="padding:10px;"><a href="mailto:sman103jkt@gmail.com">sman103jkt@gmail.com</a></td>
+          </tr>
+        </table>
+
+        <div style="width:100%; height:400px; border-radius:12px; overflow:hidden; margin-top:20px;">
+          <iframe
+            src="https://www.google.com/maps?q=SMAN+103+Jakarta,+JL.+Mawar+Merah+VI+Perumnas+Klender,+Malaka+Jaya,+Duren+Sawit,+Jakarta+Timur&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; SMAN 103 Jakarta</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    const eskulData = {
+      'Pramuka': { ketua: 'Raka Pratama', wa: '081234567890', img: 'pramuka.jpg', desc: 'Gerakan Pramuka mengajarkan keterampilan hidup dan kepemimpinan.' },
+      'Paskibra': { ketua: 'Intan Sari', wa: '081239876543', img: 'WYS.jpg', desc: 'Melatih disiplin dan semangat nasionalisme.' },
+      'Basket': { ketua: 'Dimas Arya', wa: '081222334455', img: 'basket.jpg', desc: 'Melatih fisik, strategi, dan kerja sama tim.' },
+      'Voli': { ketua: 'Sinta Dewi', wa: '081233344455', img: 'volli.jpg', desc: 'Fokus pada kebugaran dan koordinasi.' },
+      'Futsal': { ketua: 'Bayu Saputra', wa: '081255667788', img: 'futsal.jpg', desc: 'Mengasah refleks dan kerja sama tim.' },
+      'Paduan Suara': { ketua: 'Nadia Ayu', wa: '081200334455', img: 'padus.jpg', desc: 'Melatih kemampuan vokal dan harmoni.' },
+      'PMR': { ketua: 'Fajar Rizki', wa: '081244556677', img: 'pmr.jpg', desc: 'Palang Merah Remaja melatih pertolongan pertama dan kepedulian sosial.' },
+      'Teater': { ketua: 'Citra Laras', wa: '081233366699', img: 'teater.jpg', desc: 'Mengasah seni peran dan ekspresi diri.' },
+      'MuayThai': { ketua: 'Reyhan Akbar', wa: '081211122233', img: 'muaythai.jpg', desc: 'Melatih ketahanan fisik dan bela diri.' },
+      'Fotografi': { ketua: 'Salsa Nabila', wa: '081233377711', img: 'fragma.jpg', desc: 'Mengasah keterampilan foto dan komposisi.' },
+      'Band': { ketua: 'Davin Putra', wa: '081245667899', img: 'band.jpg', desc: 'Tempat siswa berkarya dan tampil dalam acara.' },
+      'Badminton': { ketua: 'Lina Sari', wa: '081211199977', img: 'badminton.jpg', desc: 'Melatih kecepatan dan sportivitas.' },
+      'Tari Tradisional': { ketua: 'Mira Anggraini', wa: '081277788899', img: 'tari.jpg', desc: 'Melestarikan budaya bangsa.' },
+      'Ratu Jaroeh': { ketua: 'Rafika Rahma', wa: '081299988877', img: 'Ratu jaruh.jpg', desc: 'Tari Aceh yang dinamis dan kompak.' },
+      'Modern Dance': { ketua: 'Dea Rahman', wa: '081266677788', img: 'MD.jpg', desc: 'Tarian modern yang energik dan ekspresif.' },
+      'Sains Club': { ketua: 'Bima Aditya', wa: '081255443322', img: 'Sains Club.jpg', desc: 'Mengembangkan riset dan eksperimen.' },
+      'Marching Band': { ketua: 'Alfa Prakoso', wa: '081233388899', img: 'Marching Band.jpg', desc: 'Kombinasi musik dan baris-berbaris.' },
+      'Silat': { ketua: 'Tio Wibowo', wa: '081277766655', img: 'silat.jpg', desc: 'Bela diri tradisional yang menanamkan disiplin.' },
+      'ROHIS': { ketua: 'Hana Nur', wa: '081288877766', img: 'rohis.jpg', desc: 'Kegiatan Rohani Islam.' },
+      'ROKRIS': { ketua: 'Yohanes Farel', wa: '081299977744', img: 'rokris.jpg', desc: 'Kegiatan Rohani Kristen.' },
+      'Japanesse Club': { ketua: 'Rina Ayaka', wa: '081266688877', img: 'Jepang club.jpg', desc: 'Belajar budaya dan bahasa Jepang.' },
+      'Taekwondo': { ketua: 'Kevin Hartono', wa: '081277755533', img: 'Taekwondo.png', desc: 'Latihan bela diri Korea.' },
+      'Germany Club': { ketua: 'Aisyah Pratiwi', wa: '081255577733', img: 'German.jpg', desc: 'Mengenal budaya Jerman.' },
+      'Hadroh': { ketua: 'Rahmat Febriansyah', wa: '083186501705', img: 'hadroh.jpg', desc: 'Kegiatan musik islami.' }
+    };
+
+    function showPhone(eskul) {
+      const data = eskulData[eskul];
+      if (!data) return alert('Data tidak ditemukan!');
+      const waLink = `https://wa.me/62${data.wa.slice(1)}?text=Halo%20saya%20ingin%20daftar%20ekskul%20${encodeURIComponent(eskul)}`;
+      alert(`${eskul}\nKetua: ${data.ketua}\nNomor WA: ${data.wa}\n\nKlik OK untuk membuka WhatsApp`);
+      window.open(waLink, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('activitiesGrid');
+      for (let eskul in eskulData) {
+        const data = eskulData[eskul];
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${data.img}" alt="${eskul}">
+          <h4>${eskul}</h4>
+          <p>${data.desc}</p>
+          <button onclick="showPhone('${eskul}')">DAFTAR</button>
+        `;
+        grid.appendChild(card);
+      }
+    });
+  </script>
+</body>
+</html>
